@@ -1,3 +1,5 @@
+require 'pry'
+
 def generate_star_date
   (rand(100000) + 400000) / 10.0
 end
@@ -12,7 +14,11 @@ def crew
 end
 
 def greet_crew (crew)
-  crew.each {|crew_member| "Hello #{crew_member}."}
+  greetings = []
+  crew.each_with_index do |crew_member, i|
+    greetings[i] =  "Hello #{crew_member}."
+  end
+  return greetings
 end
 
 def engage
